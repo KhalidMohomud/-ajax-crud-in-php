@@ -1,0 +1,82 @@
+
+body{
+    background-color: rgb(174, 177, 176);
+    position: relative;
+}
+.container{
+     background-color: blueviolet;
+     height: 55vh;
+     width: 25%;
+     position: absolute;
+     left: 36%;
+     top: 200px;
+     border-radius: 20px;
+     
+
+}
+.container-froms{
+  
+}
+.container-froms  h2{
+    font-size: xx-large;
+    color: rgb(237, 230, 245);
+    position: relative;
+     margin-left: 40%;      
+   
+}
+
+.container-froms form{
+    display: grid;
+    grid-template-columns: auto ;
+    padding: 20px   ;
+    gap: 8px;
+
+
+}
+
+form label{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+
+}
+
+.container form input{
+     height: 10px;
+     border:  1px solid  blue;
+     border-radius: 10px;
+     padding: 10px;
+     font-size: large
+}
+
+.container  form button{
+     padding: 2.5px;
+     border-radius: 10px;
+     font-size: x-large;
+     font-weight: bold;
+     border: none;
+     margin-top: 5px;
+     border: 1px solid black;
+     box-shadow: black;
+
+}
+.container h3{
+     font-size: 23px;
+     color: white;
+     position: relative;
+     margin-left: 23px;
+}
+
+.container a{
+    list-style: none;
+    text-decoration: none;
+    text-decoration-line: underline;
+    color: black;
+}
+
+
+
+
+
+
