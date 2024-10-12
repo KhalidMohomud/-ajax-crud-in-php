@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="../style/view.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+ <style>
+  #tble_payment{
+    width: 100%;
+  }
+  thead{
+     /* width: 1000%; */
+     background-color: rebeccapurple;
+  }
+  /* tbody {
+    display: flex;
+  } */
+
+  
+ </style>
 <body>
         
    <div class="  d-flex gap-4 me-3" id="panal" >
@@ -38,28 +52,40 @@
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body-payment">
         <div class="mb-3">
-
-          <form id="insert-from" class="form-group" >
-            <label >Name</label>
-            <input type="text" placeholder="Enter User_name" class="form-control my-1"  id="Name" name="Name">
-            <label >ACC_number</label>
-            <input type="text" placeholder="Enter number" class="form-control my-1"  id="ACC_number" name="ACC_number">
-            
-            <label >Q_Month</label>
-             <input type="text"placeholder="" id="Q_Month" name="Q_Month" class="form-control my-1">
-
-            <label >Fee</label>
-            <input type="text" placeholder="Enter Fee" class="form-control my-1"  id="Fee" name="Fee">
-
-          
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              <button type="submit" id="savebtn" class="btn btn-primary">Save changes</button>
-            </div>
-          </form>
+          <div class="container">
+            <h1>Submit Receipt</h1>
+            <form id="receiptForm" >
+                <label for="name">Received From:</label>
+                <input type="text" id="name" name="name" >
+        
+                <label for="class">Class:</label>
+                <input type="text" id="class" name="class" >
+        
+                <label for="id_number">ID No:</label>
+                <input type="text" id="id_number" name="id_number" >
+        
+                <label for="amount_paid">Amount Paid:</label>
+                <input type="number" id="amount_paid" name="amount_paid" >
+        
+                <label for="discount">Discount:</label>
+                <input type="number" id="discount" name="discount" value="0">
+        
+                <label for="remark">Remark:</label>
+                <input type="text" id="remark" name="remark" >
+        
+                <label for="receipt_number">Receipt Number:</label>
+                <input type="text" id="receipt_number" name="receipt_number" >
+        
+                <label for="date">Date:
+                <input type="date" id="date" name="date" >
+        
+                <button type="submit">Submit</button>
+            </form>
+        
+            <div id="response"></div>
+        </div>
           </div>
       </div>
      
@@ -73,27 +99,33 @@
 
 
          <div class="card-body ">
-           <table class="table table-hover">
-            <thead class="bg-info">
+           <table class="table table-hover p-5" id="tble_payment">
+            <thead class="bg-success">
                <tr>
-                 <td>#</td>
-                 <td>Name</td>
-                 <th>Acc_number</th>
-                  <th> fee</th>
-                  <th>Q_month</th>
-                  <th>Date</th>
+                 <th>id</th>
+                 <th>Name</th>
+                 <th>class</th>
+                  <th> id_number</th>
+                  <th>amount_paid</th>
+                  <th>discount</th>
                  
-                 <th>action</th>
+                 <th>balance</th>
+                 <th>remark</th>
+                 <th>receipt_number</th>
+                 <th>date</th>
+                 <th>created_at</th>
+                 <th>Action</th>
                  
                </tr>
               </thead>
-                 <tbody id="tbody">
+                 
+                 <tbody id="tbody" class=" ">
+                  
+                   <tr>
+                    
 
-                
-                    <!-- <tr>
-                      
-                    </tr> -->
-                  </thead>
+                   </tr>
+                 </tbody>
            </table>
          </div>
      </div>
@@ -119,5 +151,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../moduls/users.js"></script>
+<script src="../moduls/payment.js"></script>
 </html>

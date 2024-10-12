@@ -59,57 +59,65 @@ if(isset($_POST['insert'])){
 
 
 
-function generedID($conn){
+// function generedID($conn){
 
-   $NewId = '';
-   $date = array();
-  //  $array_date = array();
-   extract($_POST);
+//    $NewId = '';
+//    $date = array();
+//   //  $array_date = array();
+//    extract($_POST);
 
-    $query = "select *FROM  users ORDER by users.id  Desc limit 1";
+//     $query = "select *FROM  users ORDER by users.id  Desc limit 1";
 
-     $result = $conn->query($query);
-     if($result){
+//      $result = $conn->query($query);
+//      if($result){
 
-     $num_rows = $result->num_rows;
+//      $num_rows = $result->num_rows;
 
-      if($num_rows > 0){
-        $row =  $result->fetch_assoc();
-        $NewId = ++ $row['id'];
+//       if($num_rows > 0){
+//         $row =  $result->fetch_assoc();
+//         $NewId = ++ $row['id'];
 
-      }
-      else{
-        $NewId  = " MM00001";
-      }
+//       }
+//       else{
+//         $NewId  = " MM00001";
+//       }
 
-       $date = array("status"=>"success","date"=>$NewId);
-     }
-     else{
-      $date = array("status"=>"error","date"=>"error");
-     }
-     echo json_encode($date);
-}
+//        $date = array("status"=>"success","date"=>$NewId);
+//      }
+//      else{
+//       $date = array("status"=>"error","date"=>"error");
+//      }
+//      echo json_encode($date);
+// }
+// function generate($conn){
+  
+//   $NewId = "";
+//   $sql = "select*from users order by"
+
+// }
 
 
 
-// if(isset($_POST['action'])){
-// $action = $_POST['action'];
-//   $action($conn);
+
+
+if(isset($_POST['action'])){
+$action = $_POST['action'];
+  $action($conn);
 
 
    
-// }else
-// {
-//   $date = array("status"=>false,"message"=>"action is required");
-// }
-if(isset($_POST['action'])){ 
-  $action = $_POST['action']; 
-    $action($conn);
-}else{
-
-  // hadii kalana waa inla dhahaa actionka walaga rabaa
+}else
+{
   echo json_encode(array("status" => false, "data" => "Actionka ayaa loo bahan yahay"));
 }
+// if(isset($_POST['action'])){ 
+//   $action = $_POST['action']; 
+//     $action($conn);
+// }else{
+
+//   // hadii kalana waa inla dhahaa actionka walaga rabaa
+//   echo json_encode(array("status" => false, "data" => "Actionka ayaa loo bahan yahay"));
+// }
 
 
 ?>
